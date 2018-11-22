@@ -14,4 +14,4 @@ COPY resources/ ./pyspark-nasa-logs-lab/resources/
 
 WORKDIR '/pyspark-nasa-logs-lab/scripts/'
 
-CMD ["/bin/bash"]
+CMD [ "python", "./app.py" ]
