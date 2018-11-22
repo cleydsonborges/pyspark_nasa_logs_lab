@@ -14,9 +14,9 @@ Para maiores instruções de sua instalação acesse o link abaixo:
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
 
 2 - Efetuar Download dos arquivos de Logs do  site da NASA, descompactá-los na pasta resources.
-ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz , 205.2​ ​ MB.
-ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz​ , ​167.8​ ​ MB.
-
+[NASA Jul 95 , 205.2​ ​ MB.](ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz) ,
+[NASA Aug 95 167.8​ ​ MB.](ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz)​
+Temos uma amostra de dados já  no repositório. TODO: Mapeamento de Volume para Bucket S3.
 
 ### Executando Jupyter Notebook.
 
