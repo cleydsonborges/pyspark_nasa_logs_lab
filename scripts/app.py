@@ -80,8 +80,8 @@ def parseLogs():
     return parsed_logs, access_logs, failed_logs
 
 if __name__ == "__main__":
-    baseDir = os.path.join('data')
-    inputPath = os.path.join('jul', 'aug')
+    baseDir = os.path.join('../')
+    inputPath = os.path.join('resources')
     logFile = os.path.join(baseDir, inputPath)
 
     parsed_logs, access_logs, failed_logs = parseLogs()
@@ -109,3 +109,10 @@ if __name__ == "__main__":
     content_sizes = access_logs.map(lambda log: log.content_size).cache()
     content_sizes = content_sizes.reduce(lambda a, b: a + b)
     print('5. O total de bytes retornados.: {}'.format(content_sizes))
+
+    with open('output.txt', 'a+') as file:
+        file.write('1. Número de hosts únicos.: {}\n'.format(unique_host_count))
+        file.write('2. O total de erros 404.: {}\n'.format(bad_records.count()))
+        file.write('3. As 5 URLs que mais causaram erro 404.: {}\n'.format(five_top_err_urls))
+        file.write('4. Quantidade de erros 404 por dia.: {}\n'.format(err_by_date[0][1]))
+        file.write('5. O total de bytes retornados.: {}\n'.format(content_sizes))
