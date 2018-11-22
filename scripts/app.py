@@ -23,7 +23,7 @@ def parse_apache_time(s):
                              int(s[15:17]),
                              int(s[18:20]))
 
-def parseApacheLogLine(logline):
+def parse_apache_log_line(logline):
     """ Faz o parse da linha no formato Apache Common Log
     Args:
         logline (str): uma linha em texto no formato Apache Common Log
@@ -58,7 +58,7 @@ def parseLogs():
     """ Ler o Arquivo e fazer o parse do LOG """
     parsed_logs = (sc
                    .textFile(logFile)
-                   .map(parseApacheLogLine)
+                   .map(parse_apache_log_line)
                    .cache())
 
     access_logs = (parsed_logs
@@ -80,6 +80,7 @@ def parseLogs():
     return parsed_logs, access_logs, failed_logs
 
 if __name__ == "__main__":
+#TODO: Parametrizar via args o diretório dos arquivos.
     baseDir = os.path.join('../')
     inputPath = os.path.join('resources')
     logFile = os.path.join(baseDir, inputPath)

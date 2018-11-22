@@ -10,3 +10,13 @@ deploy_container:
 
 deploy_jupyter_notebook:
 	docker run -it --rm -v $(ROOT_DIR):/home/jovyan/work --user root -p 8888:8888 jupyter/all-spark-notebook
+
+.PHONY: install test
+
+default: test
+
+install:
+		pipenv install --dev --skip-lock
+
+test:
+		PYTHONPATH=./src pytest -vv
