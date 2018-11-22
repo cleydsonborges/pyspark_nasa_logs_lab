@@ -14,6 +14,9 @@ Para maiores instruções de sua instalação acesse o link abaixo:
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
 
 2 - Efetuar Download dos arquivos de Logs do  site da NASA, descompactá-los na pasta resources.
+ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz , 205.2​ ​ MB.
+ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz​ , ​167.8​ ​ MB.
+
 
 Executando Jupyter Notebook.
 
