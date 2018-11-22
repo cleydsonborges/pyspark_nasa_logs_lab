@@ -105,7 +105,7 @@ if __name__ == "__main__":
     err_date_sum = err_date_count_pair_tuple.reduceByKey(lambda a, b: a + b)
     err_date_sorted = err_date_sum.sortByKey().cache()
     err_by_date = err_date_sorted.collect()
-    print('4. Quantidade de erros 404 por dia.: {}'.format(err_by_date[0][1]))
+    print('4. Quantidade de erros 404 por dia.: {}'.format(err_by_date))
 
     content_sizes = access_logs.map(lambda log: log.content_size).cache()
     content_sizes = content_sizes.reduce(lambda a, b: a + b)
@@ -115,5 +115,5 @@ if __name__ == "__main__":
         file.write('1. Número de hosts únicos.: {}\n'.format(unique_host_count))
         file.write('2. O total de erros 404.: {}\n'.format(bad_records.count()))
         file.write('3. As 5 URLs que mais causaram erro 404.: {}\n'.format(five_top_err_urls))
-        file.write('4. Quantidade de erros 404 por dia.: {}\n'.format(err_by_date[0][1]))
+        file.write('4. Quantidade de erros 404 por dia.: {}\n'.format(err_by_date))
         file.write('5. O total de bytes retornados.: {}\n'.format(content_sizes))
